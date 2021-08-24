@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  title ='Hello Workshop';
+  themeColor = 'red';
+
+  currentLesson = null;
 
   courseLessons = [
     { title: 'Hello Angular' },
@@ -21,6 +25,16 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  updateColor() {
+    console.log('Update color Whoop whoop!');
+    this.themeColor = 'salmon';
+  }
+
+  selectLesson(lesson) {
+    console.log('Lesson selected !', lesson);
+    this.currentLesson = lesson;
   }
 
 }
